@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Primeiro Site Único</title>
+    
+    <!-- O CÓDIGO CSS FICA AQUI DENTRO -->
+    <style>
+        /* Reseta os espaços padrões do navegador */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo do fundo do site */
+        body {
+            background-color: #f4f4f9;
+            color: #333;
+            transition: background-color 0.5s ease;
+        }
+
+        /* Barra de navegação */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #2c3e50;
+            padding: 20px;
+            color: white;
+        }
+
+        .navbar ul {
+            display: flex;
+            list-style: none;
+        }
+
+        .navbar ul li {
+            margin-left: 20px;
+        }
+
+        .navbar ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* Conteúdo principal */
+        .conteudo {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 70vh;
+            text-align: center;
+        }
+
+        .conteudo h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Botão interativo */
+        #botao-cor {
+            margin-top: 20px;
+            padding: 12px 24px;
+            font-size: 1rem;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        #botao-cor:hover {
+            background-color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- O CÓDIGO HTML (ESTRUTURA) FICA AQUI -->
+    <nav class="navbar">
+        <h2>MeuSite</h2>
+        <ul>
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="#">Contato</a></li>
+        </ul>
+    </nav>
+
+    <main class="conteudo">
+        <h1>Bem-vindo ao meu site!</h1>
+        <p>Este site junta HTML, CSS e JavaScript em um arquivo só.</p>
+        <button id="botao-cor">Mudar Cor de Fundo</button>
+    </main>
+
+    <!-- O CÓDIGO JAVASCRIPT FICA AQUI DENTRO -->
+    <script>
+        // Seleciona o botão e o corpo da página
+        const botao = document.getElementById('botao-cor');
+        const corpoPagina = document.body;
+
+        // Lista de cores para o site mudar
+        const cores = ['#f4f4f9', '#e8f8f5', '#fef9e7', '#fbf1f1', '#eaf2f8'];
+        let indiceCor = 0;
+
+        // Função que muda a cor ao clicar no botão
+        botao.addEventListener('click', () => {
+            indiceCor = (indiceCor + 1) % cores.length;
+            corpoPagina.style.backgroundColor = cores[indiceCor];
+        });
+    </script>
+</body>
+</html>
